@@ -1,0 +1,27 @@
+# Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from GitHub
+                git branch: 'main', 
+                url: 'https://github.com/your-username/your-repo-name.git'
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                // Run the Python file to execute and test it
+                sh 'python file1.py'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed - check console output for results.'
+        }
+    }
+}
