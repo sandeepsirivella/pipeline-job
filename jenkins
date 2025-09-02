@@ -1,4 +1,4 @@
-# Jenkinsfile (Declarative Pipeline)
+#Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
 
@@ -7,14 +7,14 @@ pipeline {
             steps {
                 // Checkout code from GitHub
                 git branch: 'main', 
-                url: 'https://github.com/your-username/your-repo-name.git'
+                url: 'https://github.com/sandeepsirivella/pipeline-job.git'
             }
         }
 
         stage('Build & Test') {
             steps {
                 // Run the Python file to execute and test it
-                sh 'python file1.py'
+                sh 'python3 file1.py'
             }
         }
     }
